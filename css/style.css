@@ -1,0 +1,657 @@
+/* Selectores Generales */
+
+:root {
+    --fuenteTitulos: 'Noto Sans', sans-serif;
+    --fuenteParrafos: 'Staatliches', cursive;
+
+    --colorPrimario: #784D3C;
+    --colorBlanco: #FFFFFF;
+    --colorNegro: #000000;
+    --colorAmarillo: #ffc107;
+    --colorAzul: #0097A7;
+    --colorGris: #E1E1E1;
+    --colorMorado: #9C27B0;
+    --colorMoradoOsuro: #89119D;
+    --colorAmarillo: #FFCE00;
+    --colorRojo: #e94921;
+    --colorAzulClaro: #bfe3ff;
+    --colorCrema: #F8DE7E;
+    --colorAzul2: #3ff7c9;
+    --colorVerdecito: #C6EA8D;
+    --colorRojis: #f76691;
+    --colorAzulcielo: #B5ffff;
+    --colorNaranjita: #FFE98A;
+    --colorBonitoNaranja: #FB6602;
+    --colorDelrio: #AF948F;
+    --colorAmarillosea: #F6A705;
+    --colorEmperor: #555555;
+    --colorCafecitoclaro: #925F17;
+    --colorMoradooscurisimo: #41222A;
+
+}
+
+html {
+    box-sizing: border-box; /* para que el padding margin etc... no afecte el ancho de los elementos */
+    font-size: 62.5%; /* para que 1 rem = 10 px */ 
+}
+
+*, *:before, *:after {
+    box-sizing: inherit; /* hereda del elemento padre que es el html */
+}
+
+body {
+    font-family: var(--fuenteParrafos);
+    font-size: 1.6rem; /* tamaño de la fuente */
+    line-height: 5rem; /* interlineado */
+    background-image: linear-gradient(to top, var(--colorAzulClaro) 0%, var(--colorBlanco) 100%);/* para hacer el degradado de la pagina web */
+}
+
+/* cuando se usa mas de una vez se pone en globales */ 
+/* Globales */
+
+.contenedor {
+    max-width: 120rem;
+    width: 90%; 
+    margin: 0 auto;
+}
+
+a{
+    text-decoration: none; /* se quita el interlineado a los enlaces */
+    color: var(--colorCrema);
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--fuenteTitulos); /* usan la misma fuente */
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 4.8rem; /*diferente tamaño en cada heading*/
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 3.2rem;
+}
+
+h4 {
+    font-size: 2.8rem;
+}
+
+p {
+    font-family: var(--fuenteParrafos);
+    line-height: 1.3;
+    font-size: 2.8rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Utilidades */
+
+.no-margin {
+    margin: 0; /* para quitarle la margen */
+}
+
+.no-padding {
+    padding: 0; /* para quitarle el padding */
+}
+
+.centrar-texto {
+    text-align: center;
+}
+
+/* HEADER */
+
+.header {
+    background-image: url(../imagenes/banner.jpg);/* Para una imagen de fondo */
+    height: 60rem; /* para darle una altura a la imagen y se vea */
+    background-size: cover; /* Para que tome todo el espacio disponible la imagen */
+    background-repeat: no-repeat; /* para que no se repita la imagen */
+    background-position: center center; /* para que fluya en el centro cuando la imagen este mas pequeña centrandola vertical y horizontalmente */
+}
+
+.header__texto {
+    text-align: center; /* centra el texto */
+    color: var(--colorBlanco); /* da color blanco al texto */
+    margin-top: 5rem;
+}
+
+@media (min-width: 768px) {
+    .header__texto {
+        margin-top: 15rem;
+    }
+}
+
+.navegacion__enlace {
+    display: block; /* para que se muestre un elemento debajo del otro */
+    text-align: center;
+    font-size: 3rem;
+    color: var(--colorBlanco);
+}
+/*Otro*/
+.navegacion__enlace1 {
+    display: block; /* para que se muestre un elemento debajo del otro */
+    text-align: center;
+    font-size: 3rem;
+    color: var(--colorBlanco);
+}
+
+@media (min-width: 768px) {
+    .navegacion {
+        display: flex; /* ajusta la navegacion con flex por defecto la alinea */
+        justify-content: center; /* le da espacio al titulo y a la barra de navegacion */
+        align-items: center; /* alinea horizontalemente */
+        gap: 3rem;
+        color: var(--colorBlanco); /* da color blanco al texto */
+        margin-top: 17rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    .navegacion__enlace:hover {
+        cursor: pointer;
+        color: var(--colorRojo);
+    }
+}
+
+.contenedor__titulo {
+    color: var(--colorAmarillo);
+    padding-top: 5rem;
+    text-transform: uppercase;
+}
+
+.descripcion {
+    -webkit-box-shadow: 0px 0px 2px 7px rgba(148,148,148,0.68);
+    -moz-box-shadow: 0px 0px 2px 7px rgba(148,148,148,0.68);
+    box-shadow: 0px 0px 2px 7px rgba(148,148,148,0.68);
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 0px solid #000000;
+    padding: 2rem;/* para separar un poco la margen interna en todas las direcciones */
+    margin-top: 2rem; /* para darle una distancia de la margen externa de la figura de arriba con el main */
+    margin-bottom: 4rem;
+    background: var(--colorGris);/* para hacer el degradado de la pagina web */
+}
+
+.descripcion__titulo {
+    text-align: center;
+}
+
+.descripcion__texto {
+    font-family: var(--fuenteParrafos);
+    font-size: 2rem;
+}
+
+
+
+
+/***************************************** CSS Zona Registro **********************************************************************/
+
+
+
+.header2 {
+    background-image: url(../imagenes/banner28.jpg);/* Para una imagen de fondo */
+    height: 60rem; /* para darle una altura a la imagen y se vea */
+    background-size: cover; /* Para que tome todo el espacio disponible la imagen */
+    background-repeat: no-repeat; /* para que no se repita la imagen */
+    background-position: center center; /* para que fluya en el centro cuando la imagen este mas pequeña centrandola vertical y horizontalmente */
+}
+
+.formulario {
+    background-color: var(--colorPrimario);
+    width: min(70rem, 100%); /* min compara dos valores y escoge el mas pequeño asi ya no se tiene que adaptar la pantalla para telefono */
+    margin: 0 auto;/* es para que centre el formulario */
+    padding: 3rem;
+    -webkit-box-shadow: 0px 0px 2px 7px rgba(148,148,148,0.68);
+    -moz-box-shadow: 0px 0px 2px 7px rgba(148,148,148,0.68);
+    box-shadow: 0px 0px 2px 7px rgba(148,148,148,0.68);
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+}
+.formulario fieldset {
+    border: none;
+}
+.formulario legend {
+    text-align: center;
+    font-size: 3rem;
+    text-transform: uppercase;/* para volver mayuscula el texto */
+    font-weight: 700;/* es para el tamaño de la fuente que sea bold */
+    margin-bottom: 2rem;
+    color: var(--colorNegro);
+}
+@media (min-width: 768px) {
+    .contenedorCampos {
+        display: grid;
+        grid-template-columns: 50% 50%; /* aca se le dice que le de el 50% a dos columnas */ 
+        grid-template-rows: auto auto 20rem;/* la ultima es de 20rem porque el textarea es de 20rem height */
+        column-gap: 2rem; /* para separar las columnas */
+    }   
+    .campos:nth-child(3), .campos:nth-child(4) { /* se selecciona la 3 clase con el nombre campo para separarla en una columna sola */ 
+        grid-column: 1 / 3;/* para que valla de la columna 1 a la 3 para que asi ocupe todo el espacio y quede solo el correo en una fila*/
+    }
+}
+.campos {
+    margin-bottom: 1rem;
+}
+.campos label {/* label es el titulo o nombre de la entrada de texto que se ingresara */
+    color: var(--colorNegro);
+    font-weight: 400;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    display: block;/* sirve para que cada label tome todo el espacio disponible */
+}
+.inputEstilos {
+    width: 100%; /* para que coja todo el espacio disponible */ 
+    border: none;
+    padding: 1.5rem;
+    border-radius: 0.5rem;/* para darle esquinas redondeadas */
+    font-family: Arial, Helvetica, sans-serif;
+}
+.boton {
+    display: block; /* para que en un dispositivo movil se vea completo */
+    font-family: var(--fuenteParrafos);
+    color: var(--colorBlanco);
+    text-align: center;
+    padding: 1rem 3rem;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    background-color: var(--colorNegro);
+    margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+    .boton {
+        display: inline-block; /* no permite poner margin ni widht a un elemento toma lo necesario para el elemento */
+        border-radius: 1rem;
+        border: none;
+    }
+    .boton:hover {
+        cursor: pointer;
+        color: var(--colorMorado);
+        background-color: var(--colorAmarillo);
+        text-decoration: none;
+    }
+}
+.registro__titulo {
+    text-align: center;
+}
+.registro {
+    margin-bottom: 4rem;
+}
+
+.seleccionar {
+    background: var(--colorCrema);
+    font-size: 14px;
+    height: 50px;
+    padding: 5px;
+    width: 100%;
+    border: none;
+    border-radius: 0.5rem;/* para darle esquinas redondeadas */
+    font-family: Arial, Helvetica, sans-serif;
+ }
+
+/***************************************** CSS Zona login **********************************************************************/
+
+
+
+.header3 {
+    background-image: url(../imagenes/banner7.jpg);/* Para una imagen de fondo */
+    height: 60rem; /* para darle una altura a la imagen y se vea */
+    background-size: cover; /* Para que tome todo el espacio disponible la imagen */
+    background-repeat: no-repeat; /* para que no se repita la imagen */
+    background-position: center center; /* para que fluya en el centro cuando la imagen este mas pequeña centrandola vertical y horizontalmente */
+}
+
+.formularioingreso {
+    background-color: var(--colorRojo);
+    width: min(70rem, 100%); /* min compara dos valores y escoge el mas pequeño asi ya no se tiene que adaptar la pantalla para telefono */
+    margin: 0 auto;/* es para que centre el formulario */
+    padding: 3rem;
+    -webkit-box-shadow: 0px 0px 2px 7px rgba(148,148,148,0.68);
+    -moz-box-shadow: 0px 0px 2px 7px rgba(148,148,148,0.68);
+    box-shadow: 0px 0px 2px 7px rgba(148,148,148,0.68);
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+}
+.formularioingreso fieldset {
+    border: none;
+}
+.formularioingreso legend {
+    text-align: center;
+    font-size: 3rem;
+    text-transform: uppercase;/* para volver mayuscula el texto */
+    font-weight: 700;/* es para el tamaño de la fuente que sea bold */
+    margin-bottom: 2rem;
+    color: var(--colorNegro);
+}
+
+
+
+/***************************************** Pagina Inicio **********************************************************************/
+
+
+
+@media (min-width: 768px) {
+    .navegacion2 {
+        display: flex; /* ajusta la navegacion con flex por defecto la alinea */
+        justify-content: center; /* le da espacio al titulo y a la barra de navegacion */
+        align-items: center; /* alinea horizontalemente */
+        gap: 3rem;
+        color: var(--colorBlanco); /* da color blanco al texto */
+        margin-top: 37rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    .navegacion__enlace:hover {
+        cursor: pointer;
+        color: var(--colorRojo);
+    }
+}
+
+.contenedor__titulo3 {
+    color: var(--colorAmarillo);
+    padding-top: 3rem;
+    text-transform: uppercase;
+}
+
+.header4 {
+    background-image: url(../imagenes/banner48.jpg);/* Para una imagen de fondo */
+    height: 60rem; /* para darle una altura a la imagen y se vea */
+    background-size: cover; /* Para que tome todo el espacio disponible la imagen */
+    background-repeat: no-repeat; /* para que no se repita la imagen */
+    background-position: center center; /* para que fluya en el centro cuando la imagen este mas pequeña centrandola vertical y horizontalmente */
+}
+
+.contenedor__titulo2 {
+    color: var(--colorCrema);
+    padding-top: 5rem;
+    text-transform: uppercase;
+}
+.navegacion__enlace--sesion {
+    display: block; /* para que se muestre un elemento debajo del otro */
+    text-align: right;
+    font-size: 3rem;
+    color: var(--colorBlanco);
+}
+.navegacion__enlace--sesion:hover {
+    cursor: pointer;
+    color: var(--colorCrema);
+}
+
+.contenedordatos {
+    display: grid;
+    grid-template-areas: "izquierda derecha";
+    grid-template-columns: 1fr 1fr;
+    column-gap: 4rem;
+}
+
+.sidebar {
+    grid-area: derecha; /*va en el area de derecha */
+}
+.imageninicio {
+    background-repeat: no-repeat; /* para que no se repita la imagen */
+}
+
+.camposdaticos {
+    grid-area: izquierda; /*va en el area de izquierda */
+}
+
+
+
+/***************************************** Pagina Todos los articulos **********************************************************************/
+
+
+
+
+.header5 {
+    background-image: url(../imagenes/banner1.jpg);/* Para una imagen de fondo */
+    height: 60rem; /* para darle una altura a la imagen y se vea */
+    background-size: cover; /* Para que tome todo el espacio disponible la imagen */
+    background-repeat: no-repeat; /* para que no se repita la imagen */
+    background-position: center center; /* para que fluya en el centro cuando la imagen este mas pequeña centrandola vertical y horizontalmente */
+}
+
+.formularioarticulitos {
+    background-color: var(--colorPrimario);
+    width: min(70rem, 100%); /* min compara dos valores y escoge el mas pequeño asi ya no se tiene que adaptar la pantalla para telefono */
+    margin: 0 auto;/* es para que centre el formulario */
+    padding: 3rem;
+    -webkit-box-shadow: 0px 0px 2px 7px rgba(148,148,148,0.68);
+    -moz-box-shadow: 0px 0px 2px 7px rgba(148,148,148,0.68);
+    box-shadow: 0px 0px 2px 7px rgba(45, 59, 54, 0.68);
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+}
+
+
+
+/***************************************** Pagina nuevos articulos **********************************************************************/
+
+
+
+
+.contenedordatosautor {
+    padding-top: 7rem;
+    display: grid;
+    grid-template-areas: "izquierda derecha";
+    grid-template-columns: 1fr 1fr;
+    column-gap: 4rem;
+}
+
+.inputEstilosarticulos {
+    width: 100%; /* para que coja todo el espacio disponible */ 
+    border: none;
+    padding: 1.5rem;
+    border-radius: 0.5rem;/* para darle esquinas redondeadas */
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;/* es para que centre el formulario */
+    height: 75px;
+}
+
+.titulopublicacion {
+    font-size: 3rem;
+    text-transform: uppercase;/* para volver mayuscula el texto */
+    font-family: var(--fuenteParrafos);
+    font-weight: 400;/* es para el tamaño de la fuente que sea bold */
+    margin-bottom: 2rem;
+    color: var(--colorNegro);
+}
+
+.cajita {
+    /* aspecto */
+    display: block;
+    width: 34px;
+	height: 20px;
+	border-radius: 17px;
+    cursor: pointer;
+    
+    /* Posicionamiento */
+    top: 5px;
+	left: 5px;
+    z-index: 1;
+
+	/* Comportamiento */
+    transition: all .4s ease;
+    
+    /* ocultar el posible texto que tenga */
+    overflow: hidden;
+    text-indent: 35px;  
+    transition: text-indent 0s;
+}
+
+.campofile {
+    background-color: var(--colorCrema);
+    color: var(--colorMoradoOsuro);
+    cursor: pointer;
+    margin-left: 4rem;
+    font-family: var(--fuentePrincipal);
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto 0;
+    min-height: 15px;
+    overflow: hidden;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+}
+.campofile:hover {
+cursor: pointer;
+}
+
+
+
+/***************************************** Pagina Todos los mensajes **********************************************************************/
+
+
+
+
+.header6 {
+    background-image: url(../imagenes/banner32.jpg);/* Para una imagen de fondo */
+    height: 60rem; /* para darle una altura a la imagen y se vea */
+    background-size: cover; /* Para que tome todo el espacio disponible la imagen */
+    background-repeat: no-repeat; /* para que no se repita la imagen */
+    background-position: center center; /* para que fluya en el centro cuando la imagen este mas pequeña centrandola vertical y horizontalmente */
+}
+
+.formulariomensajitos{
+    background-color: var(--colorGris);
+    width: min(70rem, 100%); /* min compara dos valores y escoge el mas pequeño asi ya no se tiene que adaptar la pantalla para telefono */
+    margin: 0 auto;/* es para que centre el formulario */
+    padding: 3rem;
+    -webkit-box-shadow: 0px 0px 2px 7px rgba(148,148,148,0.68);
+    -moz-box-shadow: 0px 0px 2px 7px rgba(148,148,148,0.68);
+    box-shadow: 0px 0px 2px 7px rgba(148,148,148,0.68);
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+}
+
+
+/***************************************** Pagina perfil **********************************************************************/
+
+
+
+
+.header7 {
+    background-image: url(../imagenes/banner46.jpg);/* Para una imagen de fondo */
+    height: 60rem; /* para darle una altura a la imagen y se vea */
+    background-size: cover; /* Para que tome todo el espacio disponible la imagen */
+    background-repeat: no-repeat; /* para que no se repita la imagen */
+    background-position: center center; /* para que fluya en el centro cuando la imagen este mas pequeña centrandola vertical y horizontalmente */
+}
+.navegacion__enlace1:hover {
+    cursor: pointer;
+    color: var(--colorAzul);
+}
+.formularioperfil {
+    background-color: var(--colorCafecitoclaro);
+    width: min(70rem, 100%); /* min compara dos valores y escoge el mas pequeño asi ya no se tiene que adaptar la pantalla para telefono */
+    margin: 0 auto;/* es para que centre el formulario */
+    padding: 3rem;
+    -webkit-box-shadow: 0px 0px 2px 7px rgba(148,148,148,0.68);
+    -moz-box-shadow: 0px 0px 2px 7px rgba(148,148,148,0.68);
+    box-shadow: 0px 0px 2px 7px rgba(148,148,148,0.68);
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+}
+
+.formulariocambiocon {
+    background-color: var(--colorCrema);
+    width: min(70rem, 100%); /* min compara dos valores y escoge el mas pequeño asi ya no se tiene que adaptar la pantalla para telefono */
+    margin: 0 auto;/* es para que centre el formulario */
+    padding: 3rem;
+    -webkit-box-shadow: 0px 0px 2px 7px rgba(148,148,148,0.68);
+    -moz-box-shadow: 0px 0px 2px 7px rgba(148,148,148,0.68);
+    box-shadow: 0px 0px 2px 7px rgba(148,148,148,0.68);
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+}
+.formulariocambiocon fieldset {
+    border: none;
+}
+.formulariocambiocon legend {
+    text-align: center;
+    font-size: 3rem;
+    text-transform: uppercase;/* para volver mayuscula el texto */
+    font-weight: 700;/* es para el tamaño de la fuente que sea bold */
+    margin-bottom: 2rem;
+    color: var(--colorNegro);
+}
+
+/***************************************** Pagina foto perfil **********************************************************************/
+
+.formulariofotoperfil {
+    background-color: var(--colorVerdecito);
+    width: min(70rem, 100%); /* min compara dos valores y escoge el mas pequeño asi ya no se tiene que adaptar la pantalla para telefono */
+    margin: 0 auto;/* es para que centre el formulario */
+    padding: 3rem;
+    -webkit-box-shadow: 0px 0px 2px 7px rgba(148,148,148,0.68);
+    -moz-box-shadow: 0px 0px 2px 7px rgba(148,148,148,0.68);
+    box-shadow: 0px 0px 2px 7px rgba(148,148,148,0.68);
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+}
+
+
+
+
+
+
+
+/***************************************** Pagina Amigos **********************************************************************/
+
+
+
+
+.header8 {
+    background-image: url(../imagenes/banner36.jpg);/* Para una imagen de fondo */
+    height: 60rem; /* para darle una altura a la imagen y se vea */
+    background-size: cover; /* Para que tome todo el espacio disponible la imagen */
+    background-repeat: no-repeat; /* para que no se repita la imagen */
+    background-position: center center; /* para que fluya en el centro cuando la imagen este mas pequeña centrandola vertical y horizontalmente */
+}
+
+.formulariobuscandoamiguis {
+    background-color: var(--colorRojis);
+    width: min(70rem, 100%); /* min compara dos valores y escoge el mas pequeño asi ya no se tiene que adaptar la pantalla para telefono */
+    margin: 0 auto;/* es para que centre el formulario */
+    padding: 3rem;
+    -webkit-box-shadow: 0px 0px 2px 7px rgba(148,148,148,0.68);
+    -moz-box-shadow: 0px 0px 2px 7px rgba(148,148,148,0.68);
+    box-shadow: 0px 0px 2px 7px rgba(255, 251, 13, 0.68);
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+}
+
+.boton_a {
+    display: inline-block; /* no permite poner margin ni widht a un elemento toma lo necesario para el elemento */
+    border-radius: 1rem;
+    border: none;
+    font-family: var(--fuenteParrafos);
+    color: var(--colorRojis);
+    background-color: var(--colorAzul2);
+    text-align: center;
+    padding: 1rem 3rem;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    margin-top: 2rem;   
+}
