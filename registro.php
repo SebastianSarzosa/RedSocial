@@ -16,7 +16,7 @@ GenerarAnctiCSRF();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
     <link rel="stylesheet" href="css/normalice.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="registro.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -104,12 +104,5 @@ GenerarAnctiCSRF();
             </form>
         </section>
     </div>
-    <footer>
-    <div class="contenedor">
-        <div class="descripcion__titulo">
-            <p class="descripcion__texto">Hecho por Juan Pablo</p>      
-        </div>
-    </div>
-    </footer>
 </body>
 </html>

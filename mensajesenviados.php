@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MensajesEnviados</title>
     <link rel="stylesheet" href="css/normalice.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="mensajesrecibidos.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
 </head>
 <body>

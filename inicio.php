@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RedSocial</title>
     <link rel="stylesheet" href="css/normalice.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="inicio.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -40,7 +40,7 @@
                         $id = $datosusuario['id_usuario'];
                         ?>
                         <div class="campos">
-                            <label for="img">Foto de perfil: </label>
+                            <label for="img"></label>
                             <?php if($datosusuario['foto_perfil'] != null){
                                 ?> <img class="imageninicio" src="<?php echo $image; ?>"> <?php
                             } else {
@@ -65,9 +65,14 @@
     <footer>
     <div class="contenedor">
         <div class="descripcion__titulo">
-            <p class="descripcion__texto">Hecho por Juan Pablo</p>      
+            <p class="descripcion__texto">Publicaciones </p>      
         </div>
     </div>
-    </footer>
+</footer>
+<div>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis voluptatibus, quod laudantium sequi voluptatem cupiditate culpa officiis nulla? Modi molestias eveniet at ad voluptatem atque delectus, quos repudiandae quibusdam corrupti!
+    </p>
+</div>
 </body>
 </html>

@@ -39,7 +39,7 @@ require_once 'funciones.php';
             <form class="formularioingreso" action="ingresando.php" method="POST" autocomplete="on" enctype="multipart/form-data">
                 <!-- fieldset es para agrupar datos que estan dentro de un mismo formulario -->
                 <fieldset>
-                    <!-- legend es como un titulo para un grupo de datos -->
+                    <!  -- legend es como un titulo para un grupo de datos -->
                     <legend>Ingrese Correctamente los Datos de su Usuario</legend>
                     <div>
 
@@ -63,13 +63,12 @@ require_once 'funciones.php';
                         <div>
                             <input class="boton" type="submit" value="Ingresar">
                         </div>
-                        <div>
-                            <center>
+                        <div class="centrar">
                             <p class="campos">
                                 ¿No tienes una cuenta? <br>
 							<a href="registro.php">Regístrate</a>
 						    </p>
-                            </center>
+
                         </div>
                     </div>
                 </fieldset>
@@ -77,13 +76,6 @@ require_once 'funciones.php';
         </section>
     </div>
     <br>
-    <footer>
-    <div class="contenedor">
-        <div class="descripcion__titulo">
-            <p class="descripcion__texto">Hecho por Juan Pablo</p>      
-        </div>
-    </div>
-    </footer>
     <br>
 </body>
 </html>
