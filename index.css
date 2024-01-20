@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+
+body {
+    background-image: url('imagenes/fondo-3d-cubos-blancos.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+svg {
+    font-family: "Russo One", sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+svg text {
+    animation: stroke 5s infinite alternate;
+    stroke-width: 2;
+    stroke: #365FA0;
+    font-size: 100px;
+    display: flex;
+    margin-top: 100%;
+    
+}
+
+@keyframes stroke {
+    0% {
+        fill: rgba(72, 138, 204, 0);
+        stroke: rgba(54, 95, 160, 1);
+        stroke-dashoffset: 25%;
+        stroke-dasharray: 0 50%;
+        stroke-width: 2;
+    }
+    70% {
+        fill: rgba(72, 138, 204, 0);
+        stroke: rgba(54, 95, 160, 1);
+    }
+    80% {
+        fill: rgba(72, 138, 204, 0);
+        stroke: rgba(54, 95, 160, 1);
+        stroke-width: 3;
+    }
+    100% {
+        fill: rgba(72, 138, 204, 1);
+        stroke: rgba(54, 95, 160, 0);
+        stroke-dashoffset: -25%;
+        stroke-dasharray: 50% 0;
+        stroke-width: 0;
+    }
+}
+
+:root {
+    --color-primario: #63B8EE;
+    --color-secundario: #468CCF;
+    --color-texto: #14396A;
+    --color-sombra: #7CACDE;
+}
+
+.botones-container .navegacion__enlace {
+    font-family: Arial, sans-serif;
+    color: var(--color-texto) !important;
+    font-size: 14px;
+    text-shadow: 1px 1px 0px var(--color-sombra);
+    box-shadow: 2px 7px 3px #D1D9F9;
+    padding: 11px 40px;
+    border-radius: 10px;
+    border: 3px groove #3866A3;
+    background: linear-gradient(to top, var(--color-primario), var(--color-secundario));
+}
+
+.botones-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.botones-container .navegacion__enlace.registro {
+    background: #63B8EE;
+    background: linear-gradient(to top, #b0e0fd, #468CCF);
+    display: flex;
+    justify-content: center;
+    margin-left: 30px; /* Aumenta el valor para aumentar el espacio entre botones */
+}
+
+.botones-container .navegacion__enlace.ingreso {
+    font-family: Arial, sans-serif;
+    color: #14396A !important;
+    font-size: 14px;
+    text-shadow: 1px 1px 0px #7CACDE;
+    box-shadow: 2px 7px 3px #D1D9F9;
+    padding: 11px 40px;
+    border-radius: 10px;
+    border: 3px groove #3866A3;
+    background: #63B8EE;
+    background: linear-gradient(to top, #b0e0fd, #468CCF);
+    margin-left: 30px; /* Ajusta el valor según sea necesario */
+}
+
+.contenedor {
+    margin-top: 5%; /* Ajusta el valor según sea necesario para bajar el contenido */
+}
+/* Estilos para el título de la descripción */
+.descripcion__titulo {
+    text-align: center;
+    color: #000000;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-size: 45px;
+}
+
+/* Estilos para el párrafo de la descripción */
+.descripcion__texto {
+    width: 80%;
+    margin: 0 auto;
+    color: #02172b;
+    font-size: 35px;
+    font-size: larger;
+}

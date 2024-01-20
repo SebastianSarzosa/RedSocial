@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #F2F2F2; /* Color de fondo */
+}
+
+.login-container {
+    display: flex;
+    width: 80%; /* Ajusta según sea necesario */
+    background-color: #fff; /* Fondo del contenedor */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.login-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Fondo de la imagen */
+    height: 560px;
+}
+
+.login-image img {
+    max-width: 100%;
+
+    width: 430px;
+}
+
+.login-form {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Centra los elementos verticalmente */
+}
+
+.login100-form {
+    width: 80%; /* Ajusta según sea necesario */
+    padding: 50px; /* Ajusta según sea necesario */
+    text-align: center; /* Centra el contenido del formulario */
+}
+
+.input100 {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.login100-form-btn {
+    background-color: #63B8EE; /* Color del botón */
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.txt1, .txt2, .txt3 {
+    color: #6B6B6B;
+    font-size: 14px;
+}
+
+.txt2 {
+    font-weight: bold;
+}

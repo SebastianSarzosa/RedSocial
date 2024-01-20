@@ -1,81 +1,56 @@
-<?php
-
-include('conexion.php');
-//session_start();
-
-require_once 'funciones.php';
-    if (isset($_POST['btnAccion'])) {
-                AntiCSRF();
-            }
-            GenerarAnctiCSRF();
-
-?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ingreso</title>
-    <link rel="stylesheet" href="css/normalice.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
+    <title>Login V17</title>
+    <link rel="stylesheet" href="ingreso.css">
 </head>
+
 <body>
-    <header class="header3">
-        <div class="contenedor">
-            <div class="contenedor__titulo">
-                <h1 class="no-margin centrar-texto">Ingresar</h1>
-            </div>
+
+    <div class="login-container">
+        <div class="login-image">
+            <!-- Puedes cambiar 'path/to/your/image.jpg' con la ruta de tu imagen -->
+            <img src="imagenes/2.png" alt="Login Image">
         </div>
-        <nav class="navegacion">
-            <a class="navegacion__enlace" href="index.php"> Inicio </a>
-            <a class="navegacion__enlace" href="registro.php"> Registrarse </a>
-        </nav>
-    </header>
-    <div class="contenedor">
-        <section class="registro">
-            <h2 class="registro__titulo">Zona de Ingreso</h2>
-            <form class="formularioingreso" action="ingresando.php" method="POST" autocomplete="on" enctype="multipart/form-data">
-                <!-- fieldset es para agrupar datos que estan dentro de un mismo formulario -->
-                <fieldset>
-                    <!  -- legend es como un titulo para un grupo de datos -->
-                    <legend>Ingrese Correctamente los Datos de su Usuario</legend>
-                    <div>
+        <div class="login-form">
+            <form class="login100-form validate-form" action="ingresando.php" method="POST" autocomplete="on" enctype="multipart/form-data">
+                <span class="login100-form-title p-b-34">
+                    Account Login
+                    <BR></BR>
+                </span>
 
-                        <div class="campos">
-                            <label for="input01">Usuario: </label>
-                            <input class="inputEstilos" type="text" name="usuario" placeholder="Tu Usuario" pattern="[a-zA-Z0-9ñÑ ]+" required>
-                        </div>
-                        <div class="campos">
-                            <label for="input02">Clave: </label>
-                            <input class="inputEstilos" type="password" name="clave" placeholder="Tu Clave" pattern="[a-zA-Z0-9ñÑ ]+" required>
-                        </div>
-                        <div class="campos">
-                            <label>Captcha:</label>
-                            <?php
-                                $captcha_text = rand(1000, 9999);
-                                echo "<label>".$captcha_text."</label>"; /* rand recibe un entero minimo y uno maximo es para un rango */
-                            ?>
-                            <input class="inputEstilos" type="text" name="captcha" placeholder="Ingrese el Captcha" min="1000" pattern="<?php echo $captcha_text ?>" required>
-                        </div>
-                        <input type="hidden" name="_csrf" value="<?php echo $_SESSION['AntiCSRF']; ?>">
-                        <div>
-                            <input class="boton" type="submit" value="Ingresar">
-                        </div>
-                        <div class="centrar">
-                            <p class="campos">
-                                ¿No tienes una cuenta? <br>
-							<a href="registro.php">Regístrate</a>
-						    </p>
-
-                        </div>
-                    </div>
-                </fieldset>
+                <br>
+                <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20" data-validate="Type user name">
+                    <input id="first-name" class="input100" type="text" name="usuario" placeholder="User name">
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 rs2-wrap-input100 validate-input m-b-20" data-validate="Type password">
+                    <input class="input100" type="password" name="clave" placeholder="Password">
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 rs2-wrap-input100 validate-input m-b-20" data-validate="Type captcha">
+                    <?php
+                        $captcha_text = rand(1000, 9999);
+                        echo "<label>Captcha: ".$captcha_text."</label>"; /* rand recibe un entero mínimo y uno máximo es para un rango */
+                    ?>
+                    <input class="input100" type="text" name="captcha" placeholder="Ingrese el Captcha" pattern="<?php echo $captcha_text ?>" required>
+                </div>
+                <div class="container-login100-form-btn">
+                    <button class="login100-form-btn">
+                        Sign in
+                    </button>
+                </div>
+                <BR></BR>
+                <div class="w-full text-center">
+                    <a href="registro.php" class="txt3">Sign Up</a>
+                </div>
             </form>
-        </section>
+        </div>
     </div>
-    <br>
-    <br>
+
 </body>
+
 </html>
