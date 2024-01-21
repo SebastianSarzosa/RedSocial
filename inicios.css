@@ -1,0 +1,124 @@
+body {
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #4267b2;
+    color: #fff;
+    padding: 15px 0;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.navegacion {
+    display: flex;
+    gap: 20px;
+}
+
+.navegacion__enlace {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navegacion__enlace--sesion {
+    margin-left: auto;
+    background-color: #fff;
+    color: #4267b2;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.perfil-section {
+    background-color: #fff;
+    border-radius: 8px;
+    margin-top: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.perfil {
+    display: flex;
+    align-items: flex-start;
+}
+
+.foto-perfil {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.imagenperfil {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info-perfil {
+    flex: 1;
+}
+
+.nombre-usuario {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.correo,
+.estado-civil {
+    margin: 5px 0;
+}
+
+
+footer {
+    background-color: #4267b2;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+p {
+    margin: 0;
+}
+
+
+
+.publicaciones-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.publicacion {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px; /* Ajusta el ancho máximo según tus preferencias */
+}
+
+.publicacion img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Ajusta según tus preferencias */
+}
