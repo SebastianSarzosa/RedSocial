@@ -1,0 +1,78 @@
+/* Estilo para la sección de publicaciones */
+.contenedor {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.publicacion {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+/* Estilo para la imagen de perfil */
+.imagenperfil {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 20px;
+    float: left;
+}
+
+/* Estilo para el contenido de la publicación */
+.contenido-publicacion {
+    padding: 20px;
+    overflow: hidden;
+}
+
+.titulo-publicacion {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.texto-publicacion {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.fecha-publicacion {
+    font-style: italic;
+    color: #888888;
+}
+
+/* Estilo para los botones */
+.boton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    float: right;
+}
+
+.boton:hover {
+    background-color: #45a049;
+}
+
+.boton-a {
+    background-color: #cccccc;
+    color: #555555;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: not-allowed;
+    margin-right: 10px;
+    float: right;
+}
+
+/* Estilo para el formulario */
+.formulario-publicacion {
+    overflow: hidden;
+    margin-bottom: 20px;
+}

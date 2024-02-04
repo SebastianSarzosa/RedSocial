@@ -1,20 +1,96 @@
-<?php include('conexion.php'); ?>
-<?php include('sesion.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RedSocial</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="inicios.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
+    <title>MiRedSocial</title>
+    <style>
+    /* Estilos para la página */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    
+        
+    }
+
+    .contenedor {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .header {
+        background-color: #94c6d1;
+        padding: 10px 0;
+    }
+
+    .logo {
+        margin: 0;
+    }
+
+    .navegacion {
+        text-align: right;
+    }
+
+    .navegacion__enlace {
+        color: #fff;
+        text-decoration: none;
+        margin-left: 20px;
+    }
+
+    .navegacion__enlace--sesion {
+        margin-left: 40px;
+    }
+
+    .main {
+        display: flex;
+        justify-content: center; /* Cambio realizado aquí para centrar horizontalmente */
+        flex-wrap: wrap;
+    }
+
+    .publicacion {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 20px;
+        margin-bottom: 20px;
+        width: calc(90.33% - 20px);
+        box-sizing: border-box;
+    }
+
+    .publicacion img {
+        max-width: 100%;
+        display: block;
+        margin: 0 auto 10px;
+    }
+
+    .reacciones {
+        margin-top: 10px;
+    }
+
+    .reaccion {
+        color: #333;
+        text-decoration: none;
+        margin-right: 10px;
+    }
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
 </head>
 <body>
     <header class="header">
         <div class="contenedor">
-            <h1 class="logo">RedSocial</h1>
+            <h1 class="logo">MiRedSocial</h1>
             <nav class="navegacion">
                 <a class="navegacion__enlace" href="todosarticulos.php">Articulos</a>
                 <a class="navegacion__enlace" href="mensajesrecibidos.php">Mensajes</a>
@@ -25,51 +101,65 @@
         </div>
     </header>
     <div class="contenedor">
-        <main>
-            <section class="perfil-section">
-                <div class="perfil">
-                    <div class="foto-perfil">
-                        <?php
-                        $consultadatospersonales = $conn->query("select * from usuarios where id_usuario = '$session_id'");
-                        $datosusuario = $consultadatospersonales->fetch();
-                        $id = $datosusuario['id_usuario'];
-                        ?>
-                        <img class="imagenperfil" src="<?php echo $datosusuario['foto_perfil'] ? $datosusuario['foto_perfil'] : 'fotosperfil/sinfotoperfil.jpg'; ?>" alt="Foto de perfil">
-                    </div>
-                    <div class="info-perfil">
-                        <h2 class="nombre-usuario"><?php echo $datosusuario['nombres'] . " " . $datosusuario['apellidos']; ?></h2>
-                        <p class="correo"><?php echo $datosusuario['correo']; ?></p>
-                        <p class="estado-civil"><?php echo $datosusuario['estado_civil']; ?></p>
-                    </div>
-                </div>
-            </section>
+        <main class="main">
             <section class="publicaciones-section">
                 <?php
-                // Consulta para obtener todas las publicaciones ordenadas por fecha
+                // Aquí incluye tu archivo de conexión a la base de datos
+                include('conexion.php');
+                
+                // Realiza la consulta para obtener las publicaciones
                 $consultaArticulos = $conn->query("SELECT * FROM articulos ORDER BY fecha_publicacion DESC");
 
-                // Comprobar si hay artículos
+                // Comprueba si hay artículos
                 if ($consultaArticulos->rowCount() > 0) {
                     while ($articulo = $consultaArticulos->fetch()) {
                 ?>
-                <article class="publicacion">
-                    <h3><?php echo $articulo['id_usuario']; ?></h3>
+                <div class="publicacion">
+                    <div class="publicacion-info">
+                        <h3><?php echo $articulo['id_usuario']; ?></h3>
+                        <span class="fecha-publicacion">Fecha de publicación: <?php echo $articulo['fecha_publicacion']; ?></span>
+                    </div>
                     <?php if (isset($articulo['texto_articulo'])) : ?>
                         <p><?php echo $articulo['texto_articulo']; ?></p>
                     <?php else : ?>
                         <p>Contenido no disponible.</p>
                     <?php endif; ?>
-                    <span>Fecha de publicación: <?php echo $articulo['fecha_publicacion']; ?></span>
-
                     <?php
-                    // Verificar si hay una imagen almacenada en la base de datos
                     if (!empty($articulo['imagen_perfil'])) {
-                        // Convertir los datos BLOB a una URL base64
                         $imagenURL = 'data:image/jpeg;base64,' . base64_encode($articulo['imagen_perfil']);
                     ?>
-                    <img src="<?php echo $imagenURL; ?>" alt="Imagen del artículo">
+                    <img src="<?php echo $imagenURL; ?>" alt="Imagen del artículo ">
                     <?php } ?>
-                </article>
+                    <div class="reacciones">
+                        <!-- Aquí puedes agregar las opciones de reacciones -->
+                        <a href="#" class="reaccion">Me gusta</a>
+                        <a href="#" class="reaccion">Comentar</a>
+                        <a href="#" class="reaccion">Compartir</a>
+                    </div>
+                </div>
+                <div class="publicacion">
+                    <div class="publicacion-info">
+                        <h3><?php echo $articulo['id_usuario']; ?></h3>
+                        <span class="fecha-publicacion">Fecha de publicación: <?php echo $articulo['fecha_publicacion']; ?></span>
+                    </div>
+                    <?php if (isset($articulo['texto_articulo'])) : ?>
+                        <p><?php echo $articulo['texto_articulo']; ?></p>
+                    <?php else : ?>
+                        <p>Contenido no disponible.</p>
+                    <?php endif; ?>
+                    <?php
+                    if (!empty($articulo['imagen_perfil'])) {
+                        $imagenURL = 'data:image/jpeg;base64,' . base64_encode($articulo['imagen_perfil']);
+                    ?>
+                    <img src="<?php echo $imagenURL; ?>" alt="Imagen del artículo ">
+                    <?php } ?>
+                    <div class="reacciones">
+                        <!-- Aquí puedes agregar las opciones de reacciones -->
+                        <a href="#" class="reaccion">Me gusta</a>
+                        <a href="#" class="reaccion">Comentar</a>
+                        <a href="#" class="reaccion">Compartir</a>
+                    </div>
+                </div>
                 <?php
                     }
                 } else {
@@ -79,8 +169,5 @@
             </section>
         </main>
     </div>
-    <footer>
-        <p>RedSocial - Tu red social personalizada</p>
-    </footer>
 </body>
 </html>

@@ -70,3 +70,8 @@ body {
 .txt2 {
     font-weight: bold;
 }
+
+.login-image img {
+    max-width: 70%;
+    width: 430px;
+}
