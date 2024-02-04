@@ -296,14 +296,15 @@ GenerarAnctiCSRF();
                 }
         ?>
         <?php
-    if ($datospublicacion['foto_perfil'] != null) {
-        $ruta_imagen = $datospublicacion['foto_perfil'];
-        echo "Ruta de la imagen: " . $ruta_imagen;
-        ?><img class="imageninicio" src="<?php echo $ruta_imagen; ?>"><?php
-    } else {
-        echo "No se ha especificado una imagen de perfil.";
-    }
-?>
+            if (isset($datospublicacion['foto_perfil']) && $datospublicacion['foto_perfil'] !== "") {
+                $ruta_imagen = $datospublicacion['foto_perfil'];
+                echo "Ruta de la imagen: " . $ruta_imagen;
+                ?><img class="imageninicio" src="<?php echo $ruta_imagen; ?>"><?php
+            } else {
+                echo "No se ha especificado una imagen de perfil.";
+            }
+        ?>
+
 
             </div>
         </main>

@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    margin: auto;
+    width: 70%;
+    height: 100vh;
+}
+.portada{
+    width: 100%;
+    height:50%;
+    background-color: #333639;
+}
+.foto_perfil{
+    position: absolute;
+    top:40%;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    border: 1px solid ;
+}
+button{
+    display: block;
+    position: absolute;
+    top: 50vh;
+    left: 70vw;
+    background-color: #fff;
+    color:#1B1A1B;
+    padding: 10px;
+    border:none;
+}
+button:hover{
+    background-color: #1B1A1B;
+    color:#fff;
+}
+button svg{
+    margin-right: 10px;
+}
+.estadistica{
+    height: 15vh;
+    background-color: #fff;
+}
+.estadistica__{
+    position: relative;    
+    left: 26%;
+    width: 74%;
+}
+h1{
+    display: inline;
+}
+.inf{
+    display: flex;
+}
+.informacion{
+    width: 36.36%;
+    background-color: #E7ECF0;
+}
+.informacion__{
+    margin: 25px;
+    height: 100px;
+    padding: 10px;
+}
+.publicaciones{
+    width: 63.64%;
+    background-color: #fff;
+}
+.button{
+    top:500px;
+    left:10px;
+    height: 50px;
+}
+#publicar{
+    display: inline-block;
+    padding: 10px 15px;
+    border: 1px solid #000;
+}
+#mensaje{
+    display: inline-block;
+    padding: 10px 15px;
+    border: 1px solid #000;
+}
+.img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 50%;
+}
+.publicacion {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

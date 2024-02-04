@@ -12,34 +12,10 @@
         margin: 0;
         padding: 0;
     }
-    
-    .contenedor {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
-    }
 
     .header {
         background-color: #94c6d1;
         padding: 10px 0;
-    }
-
-    .logo {
-        margin: 0;
-    }
-
-    .navegacion {
-        text-align: right;
-    }
-
-    .navegacion__enlace {
-        color: #fff;
-        text-decoration: none;
-        margin-left: 20px;
-    }
-
-    .navegacion__enlace--sesion {
-        margin-left: 40px;
     }
 
     .main {
@@ -87,16 +63,9 @@
 </head>
 <body>
     <header class="header">
-        <div class="contenedor">
-            <h1 class="logo">MiRedSocial</h1>
-            <nav class="navegacion">
-                <a class="navegacion__enlace" href="todosarticulos.php">Publicaciones</a>
-                <a class="navegacion__enlace" href="mensajesrecibidos.php">Mensajes</a>
-                <a class="navegacion__enlace" href="perfil.php">Perfil</a>
-                <a class="navegacion__enlace" href="amigos.php">Amigos</a>
-                <a class="navegacion__enlace--sesion" href="cerrarsesion.php">Cerrar Sesión</a>
-            </nav>
-        </div>
+        <?php
+            include("menu_bar.php")
+        ?>
     </header>
     <div class="contenedor">
         <main class="main">
