@@ -11,10 +11,8 @@
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-    
-        
     }
-
+    
     .contenedor {
         max-width: 1200px;
         margin: 0 auto;
@@ -92,7 +90,7 @@
         <div class="contenedor">
             <h1 class="logo">MiRedSocial</h1>
             <nav class="navegacion">
-                <a class="navegacion__enlace" href="todosarticulos.php">Articulos</a>
+                <a class="navegacion__enlace" href="todosarticulos.php">Publicaciones</a>
                 <a class="navegacion__enlace" href="mensajesrecibidos.php">Mensajes</a>
                 <a class="navegacion__enlace" href="perfil.php">Perfil</a>
                 <a class="navegacion__enlace" href="amigos.php">Amigos</a>
@@ -108,58 +106,37 @@
                 include('conexion.php');
                 
                 // Realiza la consulta para obtener las publicaciones
-                $consultaArticulos = $conn->query("SELECT * FROM articulos ORDER BY fecha_publicacion DESC");
+                $consultaArticulos = $conn->query("SELECT articulos.*, usuarios.nombres, usuarios.apellidos 
+                                                   FROM articulos 
+                                                   INNER JOIN usuarios ON articulos.id_usuario = usuarios.id_usuario 
+                                                   ORDER BY articulos.fecha_publicacion DESC");
 
                 // Comprueba si hay artículos
                 if ($consultaArticulos->rowCount() > 0) {
                     while ($articulo = $consultaArticulos->fetch()) {
                 ?>
-                <div class="publicacion">
-                    <div class="publicacion-info">
-                        <h3><?php echo $articulo['id_usuario']; ?></h3>
-                        <span class="fecha-publicacion">Fecha de publicación: <?php echo $articulo['fecha_publicacion']; ?></span>
-                    </div>
-                    <?php if (isset($articulo['texto_articulo'])) : ?>
-                        <p><?php echo $articulo['texto_articulo']; ?></p>
-                    <?php else : ?>
-                        <p>Contenido no disponible.</p>
-                    <?php endif; ?>
-                    <?php
-                    if (!empty($articulo['imagen_perfil'])) {
-                        $imagenURL = 'data:image/jpeg;base64,' . base64_encode($articulo['imagen_perfil']);
-                    ?>
-                    <img src="<?php echo $imagenURL; ?>" alt="Imagen del artículo ">
-                    <?php } ?>
-                    <div class="reacciones">
-                        <!-- Aquí puedes agregar las opciones de reacciones -->
-                        <a href="#" class="reaccion">Me gusta</a>
-                        <a href="#" class="reaccion">Comentar</a>
-                        <a href="#" class="reaccion">Compartir</a>
-                    </div>
-                </div>
-                <div class="publicacion">
-                    <div class="publicacion-info">
-                        <h3><?php echo $articulo['id_usuario']; ?></h3>
-                        <span class="fecha-publicacion">Fecha de publicación: <?php echo $articulo['fecha_publicacion']; ?></span>
-                    </div>
-                    <?php if (isset($articulo['texto_articulo'])) : ?>
-                        <p><?php echo $articulo['texto_articulo']; ?></p>
-                    <?php else : ?>
-                        <p>Contenido no disponible.</p>
-                    <?php endif; ?>
-                    <?php
-                    if (!empty($articulo['imagen_perfil'])) {
-                        $imagenURL = 'data:image/jpeg;base64,' . base64_encode($articulo['imagen_perfil']);
-                    ?>
-                    <img src="<?php echo $imagenURL; ?>" alt="Imagen del artículo ">
-                    <?php } ?>
-                    <div class="reacciones">
-                        <!-- Aquí puedes agregar las opciones de reacciones -->
-                        <a href="#" class="reaccion">Me gusta</a>
-                        <a href="#" class="reaccion">Comentar</a>
-                        <a href="#" class="reaccion">Compartir</a>
-                    </div>
-                </div>
+                        <div class="publicacion" id="publicacion-<?php echo $articulo['id_articulo']; ?>">
+                            <div class="publicacion-info">
+                                <h3><?php echo $articulo['nombres'] . ' ' . $articulo['apellidos']; ?></h3>
+                                <span class="fecha-publicacion">Fecha de publicación: <?php echo $articulo['fecha_publicacion']; ?></span>
+                            </div>
+                            <?php if (isset($articulo['texto_articulo'])) : ?>
+                                <p><?php echo $articulo['texto_articulo']; ?></p>
+                            <?php else : ?>
+                                <p>Contenido no disponible.</p>
+                            <?php endif; ?>
+                            <?php
+                            if (!empty($articulo['imagen_perfil'])) {
+                                $imagenURL = 'data:image/jpeg;base64,' . base64_encode($articulo['imagen_perfil']);
+                            ?>
+                                <img src="<?php echo $imagenURL; ?>" alt="Imagen del artículo ">
+                            <?php } ?>
+                            <div class="reacciones">
+                                <!-- Aquí puedes agregar las opciones de reacciones -->
+                                <a href="#" class="reaccion" onclick="darLike(<?php echo $articulo['id_articulo']; ?>)">Me gusta</a>
+                                <a href="#" class="reaccion" onclick="comentar(<?php echo $articulo['id_articulo']; ?>)">Comentar</a>
+                            </div>
+                        </div>
                 <?php
                     }
                 } else {
@@ -169,5 +146,20 @@
             </section>
         </main>
     </div>
+    <script>
+    function darLike(idArticulo) {
+        // Aquí puedes realizar una solicitud AJAX para dar like al artículo con el ID correspondiente
+        // Por ejemplo, puedes usar Fetch API o jQuery.ajax()
+        // Después de dar like, actualiza la interfaz de usuario para reflejar el cambio
+        alert('Has dado like al artículo ' + idArticulo);
+    }
+
+    function comentar(idArticulo) {
+        // Aquí puedes mostrar un formulario modal para que el usuario escriba un comentario
+        // Después de que el usuario envíe el comentario, puedes realizar una solicitud AJAX para almacenar el comentario en la base de datos
+        // Después de agregar el comentario, actualiza la interfaz de usuario para mostrar el comentario agregado
+        alert('Comentar en el artículo ' + idArticulo);
+    }
+    </script>
 </body>
 </html>

@@ -6,16 +6,86 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MisArticulos</title>
-    <link rel="stylesheet" href="css/normalice.css">
-    <link rel="stylesheet" href="css/style.css">
+    <title>Mis Publicaciones</title>
+    <style>
+        /* Estilos para la página */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .contenedor {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header5 {
+            background-color: #94c6d1;
+            padding: 10px 0;
+        }
+
+        .contenedor__titulo2 {
+            margin: 0;
+        }
+
+        .navegacion {
+            text-align: right;
+        }
+
+        .navegacion__enlace {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        main {
+            text-align: center;
+        }
+
+        .formularioarticulitos {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .imageninicio {
+            max-width: 150px;
+            border-radius: 50%;
+        }
+
+        .campos {
+            margin-bottom: 15px;
+        }
+
+        .boton {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .datosusuario {
+            font-weight: bold;
+        }
+
+        hr {
+            border: 1px solid #ccc;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header5">    
         <div class="contenedor">
             <div class="contenedor__titulo2">
-                <h1 class="no-margin centrar-texto"> Mis Articulos </h1>
+                <h1 class="no-margin centrar-texto"> Mis Publicaciones </h1>
             </div>
             <nav class="navegacion">
                 <a class="navegacion__enlace" href="inicio.php"> Inicio </a>
@@ -32,7 +102,7 @@
             <br>
             <div>
                 <?php
-
+    
                     $consultapublicacion = $conn -> query("SELECT articulos.id_articulo,  articulos.texto_articulo,
                     articulos.fecha_publicacion, articulos.articulo_privado,
                     usuarios.id_usuario, usuarios.nombres, usuarios.apellidos, usuarios.cedula, 
@@ -108,13 +178,6 @@
         </main>
     </div>
     <br>
-    <footer>
-    <div class="contenedor">
-        <div class="descripcion__titulo">
-            <p class="descripcion__texto">Hecho por Juan Pablo</p>      
-        </div>
-    </div>
-    </footer>
     <br>
 </body>
 </html>

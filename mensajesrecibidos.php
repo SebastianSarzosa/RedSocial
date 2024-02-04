@@ -2,9 +2,9 @@
 <?php include('sesion.php'); 
 require_once 'funciones.php';
 if (isset($_POST['btnAccion'])) {
-            AntiCSRF();
-        }
-        GenerarAnctiCSRF();
+    AntiCSRF();
+}
+GenerarAnctiCSRF();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,8 +13,86 @@ if (isset($_POST['btnAccion'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mensajes</title>
-    <link rel="stylesheet" href="css/normalice.css">
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Estilos para la página */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .contenedor {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header6 {
+            background-color: #94c6d1;
+            padding: 10px 0;
+        }
+
+        .contenedor__titulo2 {
+            margin: 0;
+        }
+
+        .navegacion {
+            text-align: right;
+        }
+
+        .navegacion__enlace {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .navegacion__enlace--sesion {
+            margin-left: 40px;
+        }
+
+        .registro {
+            margin-top: 20px;
+        }
+
+        .registro__titulo {
+            margin: 0;
+        }
+
+        .campos {
+            margin-bottom: 15px;
+        }
+
+        .inputEstilos {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .imageninicio {
+            max-width: 100%;
+        }
+
+        .boton {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -76,6 +154,8 @@ if (isset($_POST['btnAccion'])) {
                         </div>
                     </div>
                 </fieldset>
+                <br>
+                
             </form>
             <br>
             <?php
@@ -90,13 +170,6 @@ if (isset($_POST['btnAccion'])) {
         </section>
         <br><br>
     </div>
-    <footer>
-    <div class="contenedor">
-        <div class="descripcion__titulo">
-            <p class="descripcion__texto">Hecho por Juan Pablo</p>      
-        </div>
-    </div>
-    </footer>
     <br>
 </body>
 </html>

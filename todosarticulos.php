@@ -165,7 +165,7 @@ GenerarAnctiCSRF();
             <h1 class="logo">MiRedSocial</h1>
             <nav class="navegacion">
                 <a class="navegacion__enlace" href="inicio.php"> Inicio </a>
-                <a class="navegacion__enlace" href="misarticulos.php"> Mis publicaciones </a>
+            
                 <a class="navegacion__enlace" href="nuevoarticulo.php"> Crear un Publicacion </a>
                 <a class="navegacion__enlace--sesion" href="cerrarsesion.php">Cerrar Sesión</a>
             </nav>
