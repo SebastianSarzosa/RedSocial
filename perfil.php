@@ -24,6 +24,11 @@ while ($row = $sql->fetch(PDO::FETCH_OBJ)) {
     <link rel="stylesheet" href="css/style_perfil.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
         .header {
             background-color: #94c6d1;
             padding: 10px 0;
@@ -39,7 +44,7 @@ while ($row = $sql->fetch(PDO::FETCH_OBJ)) {
         <div class="portada">
             <?php
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    $carpetaDestino = '';
+                    $carpetaDestino = 'imagenes';
                     if (isset($_FILES["archivo"]) && $_FILES["archivo"]["error"] == UPLOAD_ERR_OK) {
                         $archivoOrigen = $_FILES["archivo"]["tmp_name"];
                         $nombreArchivo = basename($_FILES["archivo"]["name"]);
@@ -99,17 +104,10 @@ while ($row = $sql->fetch(PDO::FETCH_OBJ)) {
                         <p><?php echo $articulo->texto_articulo; ?></p><?php else : ?>
                             <p>Contenido no disponible.</p>
                             <?php endif; ?>
-                            <span>Fecha de publicación: <?php echo $articulo->fecha_publicacion; ?></span>
-                            <?php
-                                if (!empty($articulo->imagen_perfil)) {
-                                $imagenURL = 'data:image/jpeg;base64,' . base64_encode($articulo->imagen_perfil);
-                            ?>
-                            <img src="<?php echo $imagenURL; ?>" alt="Imagen del artículo">
-                    <?php } ?>
-                </article> 
-                <?php
-                }
-                ?>            
+                            <span>Fecha de publicación: <?php echo $articulo->fecha_publicacion; ?></span><br>
+                            <img src="imagenes/<?php echo $articulo->imagen_perfil; ?>" alt="Imagen del artículo" style="width: 100%;">
+                        </article>            
+                <?php } ?>
             </div>
         </div>
     </div>

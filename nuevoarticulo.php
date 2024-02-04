@@ -1,30 +1,6 @@
     <?php
     include('conexion.php');
     include('sesion.php');
-
-    // Verificar si se ha enviado el formulario
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Recuperar los datos del formulario
-        $publicacion = mysqli_real_escape_string($conn, $_POST['publicacion']); // Evita inyección SQL
-        $privado = isset($_POST['privado']) ? 1 : 0; // Si está marcado, establece 1, de lo contrario 0
-        
-        // Procesar la imagen subida
-        if(isset($_FILES['imagen']) && $_FILES['imagen']['error'] === UPLOAD_ERR_OK) {
-            $imagen_nombre = $_FILES['imagen']['name'];
-            $imagen_tmp = $_FILES['imagen']['tmp_name'];
-            $imagen_contenido = addslashes(file_get_contents($imagen_tmp)); // Convertir la imagen a datos binarios para almacenarla en la base de datos
-        } else {
-            $imagen_contenido = null; // Si no se ha subido ninguna imagen
-        }
-
-        // Insertar los datos en la base de datos
-        $sql = "INSERT INTO articulos (publicacion, privado, foto_publicacion) VALUES ('$publicacion', '$privado', '$imagen_contenido')";
-        if ($conn->query($sql) === TRUE) {
-            echo "Artículo creado exitosamente";    
-        } else {
-            echo "Error al crear el artículo: " . $conn->error;
-        }
-    }
     ?>
 
     <!DOCTYPE html>

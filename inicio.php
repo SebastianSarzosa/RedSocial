@@ -98,8 +98,9 @@
                             if (!empty($articulo['imagen_perfil'])) {
                                 $imagenURL = 'data:image/jpeg;base64,' . base64_encode($articulo['imagen_perfil']);
                             ?>
-                                <img src="<?php echo $imagenURL; ?>" alt="Imagen del artículo ">
                             <?php } ?>
+                            <img src="imagenes/<?php echo $articulo['imagen_perfil']; ?>" alt="Imagen del artículo ">
+
                             <div class="reacciones">
                                 <!-- Aquí puedes agregar las opciones de reacciones -->
                                 <a href="#" class="reaccion" onclick="darLike(<?php echo $articulo['id_articulo']; ?>)">Me gusta</a>
