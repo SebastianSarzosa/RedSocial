@@ -23,10 +23,18 @@ while ($row = $sql->fetch(PDO::FETCH_OBJ)) {
     <link rel="stylesheet" href="css/normalice.css">
     <link rel="stylesheet" href="css/style_perfil.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
+    <style>
+        .header {
+            background-color: #94c6d1;
+            padding: 10px 0;
+        }
+    </style>
 </head>
 
 <body>
-    <?php include('menu-bar.php'); ?>
+    <header class="header">
+        <?php include('menu_bar.php'); ?>
+    </header>
     <div class="container">
         <div class="portada">
             <?php
