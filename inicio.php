@@ -15,7 +15,7 @@
 
     .header {
         background-color: #94c6d1;
-        padding: 10px 0;
+        padding: 20px 0;
     }
 
     .main {
@@ -58,6 +58,10 @@
         position: fixed;
         bottom: 0;
         width: 100%;
+    }
+    .publicaciones-section{
+        margin:auto;
+        width: 600px;  
     }
 </style>
 </head>

@@ -82,14 +82,5 @@ $_POST = LimpiarEntradas($_POST);
             </form>
         </section>
     </div>
-    <br>
-    <footer>
-    <div class="contenedor">
-        <div class="descripcion__titulo">
-            <p class="descripcion__texto">Hecho por Juan Pablo</p>      
-        </div>
-    </div>
-    </footer>
-    <br>
 </body>
 </html>

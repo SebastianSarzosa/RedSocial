@@ -11,10 +11,10 @@ if (isset($_POST['boton'])) {
         $tipo = $_FILES['imagen']['type'];
         $temp  = $_FILES['imagen']['tmp_name'];
 
-        if (!(strpos($tipo, 'gif') || strpos($tipo, 'jpeg') || strpos($tipo, 'webp') || strpos($tipo, 'png'))) {
+        if (!(strpos($tipo, 'gif') || strpos($tipo, 'jpeg') || strpos($tipo, 'webp'))) {
             $_SESSION['mensaje'] = 'Solo se permiten archivos jpeg, gif, webp, png';
             $_SESSION['tipo'] = 'danger';
-            header('location:../index.php');
+            header('location:./inicio.php');
         } else {
             // Insertar datos en la base de datos usando sentencias preparadas
             $sql = "INSERT INTO articulos (id_usuario, texto_articulo, articulo_privado, fecha_publicacion, imagen_perfil) VALUES (?, ?, ?, NOW(), ?)";

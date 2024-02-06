@@ -44,7 +44,7 @@
     <div class="login-container">
         <div class="login-image">
             <!-- Puedes cambiar 'path/to/your/image.jpg' con la ruta de tu imagen -->
-            <img src="imagenes/2.png" alt="Login Image">
+            <img src="fotosperfil/Logo con fondo.jpg" alt="Login Image">
         </div>
         <div class="login-form">
             <form class="login100-form validate-form" action="ingresando.php" method="POST" autocomplete="on" enctype="multipart/form-data">

@@ -84,7 +84,7 @@ $_POST = LimpiarEntradas($_POST);
                             mkdir($uploadFileDir);
                         }
                         move_uploaded_file($_FILES["image"]["tmp_name"], "fotosperfil/" . $_FILES["image"]["name"]);
-                        $location = "fotosperfil/" . $_FILES["image"]["name"];
+                        $location = $_FILES["image"]["name"];
                         
                         /*echo "<br>Exif Antes<br>";
                         $exif2 = exif_read_data($location);
@@ -116,14 +116,6 @@ $_POST = LimpiarEntradas($_POST);
             <br>
         </main>
     </div>
-    <footer>
-    <div class="contenedor">
-        <div class="descripcion__titulo">
-            <p class="descripcion__texto">Hecho por Juan Pablo</p>      
-        </div>
-    </div>
-    </footer>
-    <br>
 </body>
 </html>
 

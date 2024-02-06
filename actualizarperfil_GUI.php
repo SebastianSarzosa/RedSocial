@@ -34,7 +34,7 @@
                             <div>
                                 <h3 class="titulo-foto-perfil">Foto de perfil</h3>
                                 <?php if($datosusuario['foto_perfil'] != null) { ?>
-                                    <center><img class="img-fluid w-25" src="<?php echo $image; ?>" alt="Foto de perfil"></center>
+                                    <center><img class="img-fluid w-25" src="fotosperfil/<?php echo $image; ?>" alt="Foto de perfil"></center>
                                 <?php } else { ?>
                                     <center><img class="img-fluid" src="fotosperfil/sinfotoperfil.jpg" height="100" width="160" alt="Sin foto de perfil"></center>
                                 <?php } ?>
