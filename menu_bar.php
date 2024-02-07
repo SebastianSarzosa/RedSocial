@@ -11,7 +11,7 @@
     }
 
     .navegacion__enlace {
-        color: #fff;
+        color: #545454;
         text-decoration: none;
         margin-left: 20px;
     }
@@ -35,6 +35,10 @@
     .header {
         padding: 10px 0;
         box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        z-index: 10;
+        width: 100%;
+        background-color: #fff;
     }
 </style>
 <header class="header">
@@ -45,11 +49,8 @@
                 <li>
                     <a class="navegacion__enlace" href="inicio.php">Inicio</a>
                 </li>
-                <li style="width:170px;">
+                <li>
                     <a class="navegacion__enlace" href="todosarticulos.php">Publicaciones</a>
-                    <ul style="padding:0; left: 48%;">
-                        <li><a href="nuevoarticulo.php" class="navegacion__enlace">Crear un Publicacion </a></li>
-                    </ul>
                 </li>
                 <li style="width:150px;">
                     <a class="navegacion__enlace" href="mensajesrecibidos.php">Mensajes</a>

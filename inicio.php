@@ -13,11 +13,6 @@
         padding: 0;
     }
 
-    .header {
-        background-color: #94c6d1;
-        padding: 20px 0;
-    }
-
     .main {
         display: flex;
         justify-content: center; /* Cambio realizado aquí para centrar horizontalmente */
@@ -75,12 +70,15 @@
             margin:auto;
             width: 600px;  
         }
+        .main{
+            top:95px;
+            position: relative;
+        }
     </style>
 </head>
 <body>
-    <header class="header">
-        <!-- Aquí incluyes el código del menú -->
-    </header>
+    <?php include("menu_bar.php");?>
+    
     <div class="contenedor">
         <main class="main">
             <section class="publicaciones-section">
@@ -238,5 +236,11 @@
             formularioEditar.style.display = 'block';
         }
     </script>
+    <script>
+    window.addEventListener("scroll", function(){
+        var header = document.querySelector(".header");
+        header.classList.toggle("abajo",this.window.scrollY>0);
+    })
+</script>
 </body>
 </html>

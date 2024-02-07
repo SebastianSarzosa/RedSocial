@@ -11,7 +11,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Crear Artículo</title>
         <link rel="stylesheet" href="css/normalize.css"> <!-- Normalice.css? -->
-        <link rel="stylesheet" href="css/style.css">
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
         <style>
             /* Estilos para la página */
@@ -21,19 +20,15 @@
                 padding: 0;
                 background-color: #f3f3f3; /* Cambio del color de fondo */
             }
-
-            .contenedor {
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 20px;
-            }
-
             .formulario__articulo--nuevo {
                 background-color: #fff;
                 border-radius: 5px;
                 padding: 20px;
                 margin-bottom: 20px;
+                margin-top:10px;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                top: 95px;
+                position: absolute;
             }
 
             .inputEstilosarticulos {
@@ -73,46 +68,13 @@
             .contenedor__titulo2 {
                 margin: 0;
             }
-
-            .navegacion {
-                text-align: right;
-            }
-
-            .navegacion__enlace {
-                color: #333; /* Se cambia el color de los enlaces */
-                text-decoration: none;
-                margin-left: 20px;
-            }
-
-            /* Estilos del pie de página */
-            footer {
-                background-color: #333;
-                color: #fff;
-                padding: 10px 0;
-                text-align: center;
-                position: fixed;
-                bottom: 0;
-                width: 100%;
-            }
-            img{
-                width: 300px;
-            }
         </style>
     </head>
     <body>
-        <header class="header5">
-            <div class="contenedor">
-                <div class="contenedor__titulo2">
-                    <h1 class="no-margin centrar-texto">Crear un Artículo</h1>
-                </div>
-                <nav class="navegacion">
-                    <a class="navegacion__enlace" href="inicio.php">Inicio</a>
-                    <a class="navegacion__enlace" href="todosarticulos.php">Todas las publicaciones</a>
-                    <a class="navegacion__enlace" href="misarticulos.php">Mis Publicaciones</a>
-                </nav>
-            </div>
-        </header>
-        <div class="contenedor">
+        <?php 
+            include("menu_bar.php");
+        ?>
+        <div class="contenedor" style="max-width: 1200px; margin: 0 auto; padding: 20px;">
             <?php
             $consultadatospersonales = $conn->query("SELECT * FROM usuarios WHERE id_usuario = '$session_id'");
             $datosusuario = $consultadatospersonales->fetch();
@@ -124,9 +86,9 @@
                             <div class="campos">
                                 <label class="descripcion__texto" for="img">Foto de autor: </label>
                                 <?php if($datosusuario['foto_perfil'] != null){
-                                    ?> <img class="imageninicio" src="<?php echo $image; ?>"> <?php
+                                    ?> <img class="imageninicio" src="fotosperfil/<?php echo $image; ?>" style="width: 300px;"> <?php
                                 } else {
-                                    ?> <img class="imageninicio" src="fotosperfil/sinfotoperfil.jpg"> <?php
+                                    ?> <img class="imageninicio" src="fotosperfil/sinfotoperfil.jpg" style="width: 300px;"> <?php
                                 } ?>
                             </div>
                         </aside>
