@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +11,6 @@
             max-width: 500px; /* Ancho máximo del contenedor */
             margin: auto; /* Centra el contenedor horizontalmente */
             padding: 20px; /* Espacio interno alrededor del contenedor */
-            
         }
 
         .login-image img {
@@ -38,29 +36,26 @@
         }
     </style>
 </head>
-
 <body>
-
     <div class="login-container">
         <div class="login-image">
             <!-- Puedes cambiar 'path/to/your/image.jpg' con la ruta de tu imagen -->
             <img src="fotosperfil/Logo con fondo.jpg" alt="Login Image">
         </div>
         <div class="login-form">
-            <form class="login100-form validate-form" action="ingresando.php" method="POST" autocomplete="on" enctype="multipart/form-data">
+            <form class="login100-form validate-form" action="ingresando.php" method="POST" autocomplete="on" enctype="multipart/form-data" onsubmit="return validateForm()">
                 <span class="login100-form-title p-b-34">
                     Account Login
                     <BR></BR>
                     <br>
                 </span>
-
                 <br>
                 <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20" data-validate="Type user name">
-                    <input id="first-name" class="input100" type="text" name="usuario" placeholder="User name">
+                    <input id="first-name" class="input100" type="text" name="usuario" placeholder="User name" required>
                     <span class="focus-input100"></span>
                 </div>
                 <div class="wrap-input100 rs2-wrap-input100 validate-input m-b-20" data-validate="Type password">
-                    <input class="input100" type="password" name="clave" placeholder="Password">
+                    <input class="input100" type="password" name="clave" placeholder="Password" required>
                     <span class="focus-input100"></span>
                 </div>
                 <div class="wrap-input100 rs2-wrap-input100 validate-input m-b-20" data-validate="Type captcha">
@@ -70,12 +65,10 @@
                     ?>
                     <br>
                     <br>
-                    <input class="input100" type="text" name="captcha" placeholder="Ingrese el Captcha" pattern="<?php echo $captcha_text ?>" required>
+                    <input class="input100" type="text" name="captcha" id="captcha" placeholder="Ingrese el Captcha" required>
                 </div>
                 <div class="container-login100-form-btn">
-                    <button class="login100-form-btn">
-                        Sign in
-                    </button>
+                    <button type="submit" class="login100-form-btn">Sign in</button>
                 </div>
                 <br>
                 <div class="w-full text-center">
@@ -84,5 +77,19 @@
             </form>
         </div>
     </div>
+
+    <script>
+        function validateForm() {
+            var captcha_input = document.getElementById('captcha').value;
+            var captcha_text = "<?php echo $captcha_text; ?>";
+
+            if (captcha_input !== captcha_text) {
+                alert("El captcha ingresado es incorrecto");
+                return false;
+            }
+            return true;
+        }
+    </script>
 </body>
 </html>
+        

@@ -116,21 +116,21 @@
             <div class="campos">
                 <div class="columna">
                     <label for="input01">Nombres: </label>
-                    <input class="inputEstilos form-control" name="nombres" type="text" placeholder="Tus nombres" pattern="[a-zA-Z0-9ñÑ ]+" required>
+                    <input class="inputEstilos form-control" name="nombres" type="text" placeholder="Tus nombres" pattern="[a-zA-ZñÑ\s]+" required>
                 </div>
                 <div class="columna">
                     <label for="input02">Apellidos: </label>
-                    <input class="inputEstilos form-control" name="apellidos" type="text" placeholder="Tus apellidos" pattern="[a-zA-Z0-9ñÑ ]+" required>
+                    <input class="inputEstilos form-control" name="apellidos" type="text" placeholder="Tus apellidos" pattern="[a-zA-Z0-9ñÑ\s]+" required>
                 </div>
             </div>
             <div class="campos">
                 <div class="columna">
                     <label for="input03">Correo: </label>
-                    <input class="inputEstilos form-control" name="correo" type="email" placeholder="Tu Correo" pattern="[a-zA-Z0-9ñÑ @.]+" required>
+                    <input class="inputEstilos form-control" name="correo" type="email" placeholder="Tu Correo" pattern="[a-zA-Z0-9ñÑ@.]+" required>
                 </div>
                 <div class="columna">
                     <label for="input04">Fecha de Nacimiento: </label>
-                    <input class="inputEstilos form-control" name="fecha_nacimiento" type="date" placeholder="Tu Fecha de Nacimiento" pattern="[a-zA-Z0-9ñÑ ]+" required>
+                    <input class="inputEstilos form-control" name="fecha_nacimiento" type="date" placeholder="Tu Fecha de Nacimiento" required max="<?php echo date('Y-m-d',strtotime('-18 years')); ?>">
                 </div>
             </div>
             <div class="campos">
@@ -155,17 +155,17 @@
                 </div>
                 <div class="columna">
                     <label for="input08">Usuario: </label>
-                    <input class="inputEstilos form-control" name="nombre_usuario" type="text" placeholder="Tu Usuario" pattern="[a-zA-Z0-9ñÑ ]+" required>
+                    <input class="inputEstilos form-control" name="nombre_usuario" type="text" placeholder="Tu Usuario" pattern="[a-zA-Z0-9ñÑ\s]+" required>
                 </div>
             </div>
             <div class="campos">
                 <div class="columna">
                     <label for="input09">Clave: </label>
-                    <input class="inputEstilos form-control" name="clave" type="password" placeholder="Tu Clave" pattern="[a-zA-Z0-9ñÑ ]+" required>
+                    <input class="inputEstilos form-control" name="clave" type="password" placeholder="Tu Clave" pattern="[a-zA-Z0-9ñÑ\s]+" required>
                 </div>
                 <div class="columna">
                     <label for="input10">Confirmar Clave: </label>
-                    <input class="inputEstilos form-control" name="confirmarclave" type="password" placeholder="Confirmar Clave" pattern="[a-zA-Z0-9ñÑ ]+" required>
+                    <input class="inputEstilos form-control" name="confirmarclave" type="password" placeholder="Confirmar Clave" pattern="[a-zA-Z0-9ñÑ\s]+" required>
                 </div>
             </div>
 
@@ -199,6 +199,10 @@
                 alert("Ingrese un correo válido");
                 return false;
             }
+            if (!validarEdad()) {
+                alert("Debe ser mayor de 18 años para registrarse");
+                return false;
+            }
             // Agrega más validaciones según sea necesario
 
             // Si todas las validaciones son exitosas, muestra el mensaje y devuelve true
@@ -208,12 +212,12 @@
 
         function validarNombres() {
             const nombres = document.querySelector("input[name='nombres']").value;
-            return nombres.match(/[a-zA-Z0-9ñÑ ]+/);
+            return nombres.match(/^[A-Za-zñÑ\s]+$/);
         }
 
         function validarApellidos() {
             const apellidos = document.querySelector("input[name='apellidos']").value;
-            return apellidos.match(/[a-zA-Z0-9ñÑ ]+/);
+            return apellidos.match(/[a-zA-Z0-9ñÑ\s]+/);
         }
 
         function validarCorreo() {
@@ -221,6 +225,19 @@
             // Puedes usar una expresión regular más compleja para validar correos electrónicos
             // Esto es solo un ejemplo simple
             return correo.includes('@');
+        }
+
+        function validarEdad() {
+            const fechaNacimiento = new Date(document.querySelector("input[name='fecha_nacimiento']").value);
+            const hoy = new Date();
+            const edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
+            const mes = hoy.getMonth() - fechaNacimiento.getMonth();
+
+            if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNacimiento.getDate())) {
+                return edad - 1;
+            }
+
+            return edad;
         }
     </script>
 </body>
