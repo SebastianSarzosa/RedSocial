@@ -52,13 +52,8 @@
                 <li>
                     <a class="navegacion__enlace" href="todosarticulos.php">Publicaciones</a>
                 </li>
-                <li style="width:150px;">
+                <li>
                     <a class="navegacion__enlace" href="mensajesrecibidos.php">Mensajes</a>
-                    <ul style="padding:0; left: 60%;">
-                        <li><a href="" class="navegacion__enlace">Nuevo mensaje</a></li>
-                        <li><a href="" class="navegacion__enlace">Menajes recividos</a></li>
-                        <li><a href="" class="navegacion__enlace">Menajes enviados</a></li>
-                    </ul>
                 </li>
                 <li>
                     <a class="navegacion__enlace" href="perfil.php">Perfil</a>

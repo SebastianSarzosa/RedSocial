@@ -25,7 +25,10 @@ $_POST = LimpiarEntradas($_POST);
 </head>
 
 <body>
-    <header class="header8">
+    <?php 
+        include("menu_bar.php");
+    ?>
+    <div class="contenedor">
         <div class="contenedor">
             <div class="contenedor__titulo2">
                 <h1 class="no-margin centrar-texto">Buscando Amigos</h1>
@@ -34,8 +37,6 @@ $_POST = LimpiarEntradas($_POST);
                 <a class="navegacion__enlace" href="amigos.php"> Amigos </a>
             </nav>
         </div>
-    </header>
-    <div class="contenedor">
         <br>
         <center><h3>No Agregues Desconocidos.</h3></center>
         <br> 

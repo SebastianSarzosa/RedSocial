@@ -22,7 +22,10 @@ GenerarAnctiCSRF();
             margin: 0; 
             padding: 0; 
         } 
-        
+        .contenedor div{
+            position: relative;
+            top: 50px;
+        }
         .contenedor { 
             max-width: 1200px; 
             margin: 0 auto; 
@@ -80,40 +83,23 @@ GenerarAnctiCSRF();
             border-radius: 5px; 
             cursor: pointer; 
         } 
-        
-        footer { 
-            background-color: #333; 
-            color: #fff; 
-            padding: 10px 0; 
-            text-align: center; 
-            position: fixed; 
-            bottom: 0; 
-            width: 100%; 
-        } 
+        main{
+            position: relative;
+            top:90px;
+        }
     </style> 
 </head> 
 <body> 
-    <header class="header8"> 
-        <div class="contenedor"> 
-            <div class="contenedor__titulo2"> 
-                <h1 class="no-margin centrar-texto">Amigos</h1> 
-            </div> 
-            <nav class="navegacion"> 
-                <a class="navegacion__enlace" href="inicio.php"> inicio </a> 
-            </nav> 
-        </div> 
-    </header> 
+    <?php include("menu_bar.php")?>
     <div class="contenedor"> 
-        <br> 
-        <div> 
-            <center><a class="boton" type="submit" href="buscaramigos.php">Quieres buscar un nuevo amigo?</a></center> 
-        </div>  
-        <br>  
+
         <main> 
             <center><h3>Mis Amigos</h3></center> 
-            <hr> 
-            <br> 
+            <hr>         
             <div> 
+                <center><a class="boton" type="submit" href="buscaramigos.php">Quieres buscar un nuevo amigo?</a></center> 
+            </div>  
+            <div style="position: relative; top: 60px;"> 
                 <?php 
                     
                     $consultaamigos = $conn -> query("select * from usuarios"); 
@@ -129,12 +115,10 @@ GenerarAnctiCSRF();
                             if($datosamistad != null){ 
                     
                 ?> 
-                <br> 
                 <form class="formulariobuscandoamiguis" action="eliminaramigo.php" method="POST" autocomplete="on" enctype="multipart/form-data"> 
                     
                     <div class="contenedordatos">  
-                        <aside class="sidebar"> 
-                            <br><br><br><br> 
+                        <aside class="sidebar">
                             <?php 
                             $id = $datosamigos['id_usuario']; 
                             ?> 
@@ -155,35 +139,34 @@ GenerarAnctiCSRF();
                         </aside> 
                         <div class="camposdaticos"> 
                             <div> 
-                                <label for="input01">Nombre Completo: </label> 
+                                <label for="input01" style="font-weight:bold;">Nombre Completo: </label> 
                                 <p class="datosusuario"><?php echo $datosamigos['nombres']." ".$datosamigos['apellidos']; ?></p> 
                             </div> 
                             <div> 
-                                <label for="input03">Correo: </label> 
+                                <label for="input03" style="font-weight:bold;">Correo: </label> 
                                 <p class="datosusuario"><?php echo $datosamigos['correo'] ?></p> 
                             </div>   
                             <div> 
-                                <label for="input03">Fecha Nacimiento: </label> 
+                                <label for="input03" style="font-weight:bold;">Fecha Nacimiento: </label> 
                                 <p class="datosusuario"><?php echo $datosamigos['fecha_nacimiento'] ?></p> 
                             </div>   
                             <div> 
-                                <label for="input03">Cedula: </label> 
+                                <label for="input03" style="font-weight:bold;">Cedula: </label> 
                                 <p class="datosusuario"><?php echo $datosamigos['cedula'] ?></p> 
                             </div>    
                             <div> 
-                                <label for="input03">Cantidad Hijos: </label> 
+                                <label for="input03" style="font-weight:bold;">Cantidad Hijos: </label> 
                                 <p class="datosusuario"><?php echo $datosamigos['cantidad_hijos'] ?></p> 
                             </div>    
                             <div> 
-                                <label for="input03">Estado Civil: </label> 
+                                <label for="input03" style="font-weight:bold;">Estado Civil: </label> 
                                 <p class="datosusuario"><?php echo $datosamigos['estado_civil'] ?></p> 
                             </div>  
                         </div>   
                         <input type="hidden" name="_csrf" value="<?php echo $_SESSION['AntiCSRF']; ?>">          
                     </div> 
                 </form>  
-                <br> 
-                <hr>   
+                <br>  
                 <?php 
                         } 
                     } 
@@ -193,7 +176,5 @@ GenerarAnctiCSRF();
             </div> 
         </main> 
     </div> 
-    <br> 
-    <br> 
 </body> 
 </html>
