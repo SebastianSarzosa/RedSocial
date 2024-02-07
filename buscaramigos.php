@@ -33,8 +33,8 @@ $_POST = LimpiarEntradas($_POST);
             <div class="contenedor__titulo2">
                 <h1 class="no-margin centrar-texto">Buscando Amigos</h1>
             </div>
-            <nav class="navegacion">
-                <a class="navegacion__enlace" href="amigos.php"> Amigos </a>
+            <nav class="navegacion1">
+                <a class="navegacion__enlace_" href="amigos.php"> Amigos </a>
             </nav>
         </div>
         <br>
@@ -66,7 +66,7 @@ $_POST = LimpiarEntradas($_POST);
                             <div class="campos">
                                 <label for="img">Foto de perfil: </label>
                                 <?php if($datosamigos['foto_perfil'] != null){
-                                    ?> <img class="imageninicio" src="<?php echo $datosamigos['foto_perfil']; ?>"> <?php
+                                    ?> <img class="imageninicio" src="fotosperfil/<?php echo $datosamigos['foto_perfil']; ?>"> <?php
                                 } else {
                                     ?> <img class="imageninicio" src="fotosperfil/sinfotoperfil.jpg"> <?php
                                 } ?>
@@ -85,13 +85,13 @@ $_POST = LimpiarEntradas($_POST);
                                     if($datosamistad != null){
 
                                 ?>
-                                    <center><input class="boton_a" type="text" value="Ya es tu Amigo(a)"></center>
+                                    <center><input class="boton_a" type="text" value="Ya es tu Amigo(a)" readonly></center>
                                 <?php
 
                                     } else {
 
                                 ?>
-                                    <center><input class="boton" type="submit" value="Agregar Amigo(a)"></center>
+                                    <center><input class="boton" type="submit" value="Agregar Amigo(a)" readonly></center>
                                 <?php
 
                                     }

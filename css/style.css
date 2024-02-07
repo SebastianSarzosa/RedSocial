@@ -4,8 +4,6 @@ html, body {
     padding: 0;
   }
   
-
-  
   .container {
     max-width: 90%;
     width: 100%;
@@ -23,7 +21,7 @@ html, body {
   }
   
   /* Navegación */
-  .navegacion {
+  .navegacion1 {
     display: flex;
     justify-content: center;
     background-color: #fff;
@@ -31,14 +29,14 @@ html, body {
     margin-bottom: 20px;
   }
   
-  .navegacion__enlace {
+  .navegacion__enlace_ {
     color: #3498db;
     text-decoration: none;
     padding: 10px 70px;
     transition: color 0.3s;
   }
   
-  .navegacion__enlace:hover {
+  .navegacion__enlace_:hover {
     color: #2ecc71;
   }
   
