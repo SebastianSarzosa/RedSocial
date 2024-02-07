@@ -83,18 +83,6 @@ body {
 .estado-civil {
     margin: 5px 0;
 }
-
-footer {
-    background-color: #4267b2;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    left: 0;
-}
-
 .hola {
     max-width: 20%; /* Cambia el tamaño máximo de la imagen al ancho del contenedor */ /* Opcional: agrega esquinas redondeadas a la imagen */
     /* Otros estilos que desees aplicar a la imagen */

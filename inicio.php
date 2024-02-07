@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MiRedSocial</title>
+    <title>SocialUTC+</title>
     <style>
     /* Estilos para la página */
     body {
@@ -12,12 +12,6 @@
         margin: 0;
         padding: 0;
     }
-
-    .header {
-        background-color: #94c6d1;
-        padding: 20px 0;
-    }
-
     .main {
         display: flex;
         justify-content: center; /* Cambio realizado aquí para centrar horizontalmente */

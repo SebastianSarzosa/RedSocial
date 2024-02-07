@@ -29,17 +29,13 @@ while ($row = $sql->fetch(PDO::FETCH_OBJ)) {
             margin: 0;
             padding: 0;
         }
-        .header {
-            background-color: #94c6d1;
-            padding: 10px 0;
-        }
     </style>
 </head>
 
 <body>
-    <header class="header">
+
         <?php include('menu_bar.php'); ?>
-    </header>
+
     <div class="container">
         <div class="portada">
             <?php
