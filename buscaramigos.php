@@ -29,18 +29,18 @@ $_POST = LimpiarEntradas($_POST);
         include("menu_bar.php");
     ?>
     <div class="contenedor">
-        <div class="contenedor">
-            <div class="contenedor__titulo2">
-                <h1 class="no-margin centrar-texto">Buscando Amigos</h1>
+        <main class="main">
+            <div class="contenedor">
+                <div class="contenedor__titulo2">
+                    <h1 class="no-margin centrar-texto">Buscando Amigos</h1>
+                </div>
+                <nav class="navegacion1">
+                    <a class="navegacion__enlace_" href="amigos.php"> Amigos </a>
+                </nav>
             </div>
-            <nav class="navegacion1">
-                <a class="navegacion__enlace_" href="amigos.php"> Amigos </a>
-            </nav>
-        </div>
-        <br>
-        <center><h3>No Agregues Desconocidos.</h3></center>
-        <br> 
-        <main>
+            <br>
+            <center><h3>No Agregues Desconocidos.</h3></center>
+            <br> 
             <h4 class="no-margin centrar-texto">Personas que quizas conozcas.</h4>
             <hr>
             <br>

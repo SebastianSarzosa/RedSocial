@@ -94,7 +94,7 @@ GenerarAnctiCSRF();
     <div class="contenedor"> 
 
         <main> 
-            <center><h3>Mis Amigos</h3></center> 
+            <center><h1>Mis Amigos</h1></center> 
             <hr>         
             <div> 
                 <center><a class="boton" type="submit" href="buscaramigos.php">Quieres buscar un nuevo amigo?</a></center> 

@@ -190,7 +190,7 @@
             // Aquí puedes realizar una solicitud AJAX para dar like al artículo con el ID correspondiente
             // Por ejemplo, puedes usar Fetch API o jQuery.ajax()
             // Después de dar like, actualiza la interfaz de usuario para reflejar el cambio
-            alert('Has dado like al artículo ' + idArticulo);
+            alert('Has dado like a la publicacion ' + idArticulo);
         }
 
         function mostrarComentarios(idArticulo) {

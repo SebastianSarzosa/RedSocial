@@ -20,6 +20,13 @@ while ($row = $sql->fetch(PDO::FETCH_OBJ)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
     <link rel="stylesheet" href="css/style_perfil.css">
+    <style>
+        input[type="submit"]{
+            left:900px;
+            top: 350px;
+            position:absolute;
+        }
+    </style>
 </head>
 
 <body>
@@ -29,26 +36,31 @@ while ($row = $sql->fetch(PDO::FETCH_OBJ)) {
     <div class="container">
         <main>
                 <div class="portada">
+                <form action="insertandoportada.php" method="post" enctype="multipart/form-data">
                     <?php
-                        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                            $carpetaDestino = 'imagenes';
-                            if (isset($_FILES["archivo"]) && $_FILES["archivo"]["error"] == UPLOAD_ERR_OK) {
-                                $archivoOrigen = $_FILES["archivo"]["tmp_name"];
-                                $nombreArchivo = basename($_FILES["archivo"]["name"]);
-                                $rutaDestino = $carpetaDestino . $nombreArchivo;
-                                if (move_uploaded_file($archivoOrigen, $rutaDestino)) {
-                                    echo 'Archivo copiado con éxito.';
-                                } else {
-                                    echo 'Error al copiar el archivo.';
-                                }
-                            } else {
-                                echo 'No se ha seleccionado un archivo o ha ocurrido un error durante la carga.';
-                            }
-                        }
-                        ?>    
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $carpetaDestino = 'imagenes/';
+        if (isset($_FILES["archivo"]) && $_FILES["archivo"]["error"] == UPLOAD_ERR_OK) {
+            $archivoOrigen = $_FILES["archivo"]["tmp_name"];
+            $nombreArchivo = basename($_FILES["archivo"]["name"]);
+            $rutaDestino = $carpetaDestino . $nombreArchivo;
+            if (move_uploaded_file($archivoOrigen, $rutaDestino)) {
+                echo 'Archivo copiado con éxito.';
+            } else {
+                echo 'Error al copiar el archivo.';
+            }
+        } else {
+            echo 'No se ha seleccionado un archivo o ha ocurrido un error durante la carga.';
+        }
+    }
+    ?> 
+    <input type="submit" value="Cambiar" style="z-index: 2;position: relative;">
+</form>
+
         
                 </div>            
                 <div>
+                    
                     <input type="file" id="imagen" name="imagen" accept="image/*" style="display: none;" onchange="mostrarImagen(this)">
                     <button type="button" onclick="document.getElementById('imagen').click()" class="subirImagen">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-upload" viewBox="0 0 16 16">
@@ -73,7 +85,7 @@ while ($row = $sql->fetch(PDO::FETCH_OBJ)) {
                                 }
                             ?>
                             <div class="button">
-                                <div id="publicar"><a href="nuevoarticulo.php">Publicar</a></div>
+                                <div id="publicar"><a href="actualizarperfil_GUI.php">Actualizar</a></div>
                                 <div id="mensaje"><a href="mensajesrecibidos.php">Mensaje</a></div>
                             </div>
                         </div>

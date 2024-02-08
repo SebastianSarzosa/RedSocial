@@ -14,16 +14,25 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Perfil</title>
             <link rel="stylesheet" href="actualizarperfil_GUI.css">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+            <style>
+                .main{
+                    top: 95px;
+                    position: relative;
+                }
+                label{
+                    padding: 3px 0;
+                }
+            </style>
         </head>
         <body>
-        <header class="header7">
             <?php
                 include("menu_bar.php")
             ?>
-        </header>
             <div class="contenedor">
-                <main>
-                    <h2>Datos del Usuario</h2>
+                <main class="main">
+                    <center><h1>Datos del Usuario</h1></center>
+                    <hr>
                     <article>
                         <div>
                             <?php
@@ -51,43 +60,34 @@
                                     <input type="hidden" name="id_usuario" value="<?php echo $id; ?>">
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <label for="input01">Nombres: </label>
-                                        <input class="inputEstilos" type="text" name="nombres" value="<?php echo $datosusuario['nombres']; ?>" pattern="[a-zA-Z0-9ñÑ ]+" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="input02">Apellidos: </label>
-                                        <input class="inputEstilos" type="text" name="apellidos" value="<?php echo $datosusuario['apellidos']; ?>" pattern="[a-zA-Z0-9ñÑ ]+" required>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label for="input03">Correo: </label>
-                                        <input class="inputEstilos" type="email" name="correo" value="<?php echo $datosusuario['correo']; ?>" pattern="[a-zA-Z0-9ñÑ @.]+" required>
-                                    </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-3">
+                                        <label for="input01">Nombres: </label><br>
+                                        <label for="input02">Apellidos: </label><br>
+                                        <label for="input03">Correo: </label><br>
                                         <label for="input04">Fecha de Nacimiento: </label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input class="inputEstilos" type="text" name="nombres" value="<?php echo $datosusuario['nombres']; ?>" pattern="[a-zA-Z0-9ñÑ ]+" required>
+                                        <input class="inputEstilos" type="text" name="apellidos" value="<?php echo $datosusuario['apellidos']; ?>" pattern="[a-zA-Z0-9ñÑ ]+" required>
+                                        <input class="inputEstilos" type="email" name="correo" value="<?php echo $datosusuario['correo']; ?>" pattern="[a-zA-Z0-9ñÑ @.]+" required><br>
                                         <input class="inputEstilos" type="date" name="fecha_nacimiento" value="<?php echo $datosusuario['fecha_nacimiento']; ?>" pattern="[a-zA-Z0-9ñÑ ]+" required>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label for="input05">Cédula: </label>
+                                    <div class="col-md-3">
+                                        <label for="input05">Cédula: </label><br>
+                                        <label for="input06">Cantidad de Hijos: </label><br>
+                                        <label for="input07">Estado civil: </label><br>
+                                        
+                                    </div>
+                                    <div class="col-md-3">
                                         <input class="inputEstilos" type="number" name="cedula" value="<?php echo $datosusuario['cedula']; ?>" min="0" maxlength="11" pattern="[0-9]+" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="input06">Cantidad de Hijos: </label>
                                         <input class="inputEstilos" type="number" name="cantidad_hijos" value="<?php echo $datosusuario['cantidad_hijos']; ?>" min="0" maxlength="3" pattern="[0-9]+" required>
+                                        <select class="inputEstilos" type="text" name="estado_civil" value="<?php echo $datosusuario['estado_civil']; ?>" pattern="[a-zA-Z0-9ñÑ]+" required>
+                                            <option value="Soltero">Soltero/a</option>
+                                            <option value="Casado">Casado/a</option>
+                                            <option value="Viudo">Viudo/a</option>
+                                        </select>                                        
                                     </div>
                                 </div>
-                                <div>
-                                    <label for="input07">Estado civil: </label>
-                                    <select class="inputEstilos" type="text" name="estado_civil" value="<?php echo $datosusuario['estado_civil']; ?>" pattern="[a-zA-Z0-9ñÑ]+" required>
-                                        <option value="Soltero">Soltero/a</option>
-                                        <option value="Casado">Casado/a</option>
-                                        <option value="Viudo">Viudo/a</option>
-                                    </select>
-                                </div> 
                                 <br>
                                 <input type="hidden" name="_csrf" value="<?php echo $_SESSION['AntiCSRF']; ?>">
                                 <div>
@@ -102,5 +102,7 @@
                     </article>
                 </main>
             </div>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
         </body>
         </html>

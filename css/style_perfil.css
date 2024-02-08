@@ -35,7 +35,7 @@ main{
 button{
     display: flex;
     position: absolute;
-    top: 350px;
+    top: 250px;
     left: 680px;
     background-color: #fff;
     color:#1B1A1B;
@@ -75,7 +75,7 @@ h1{
     background-color: #fff;
 }
 .button{
-    top:500px;
+    top:400px;
     left:10px;
     height: 50px;
     margin-top: 10px;
@@ -117,4 +117,13 @@ ul{
 a{
     text-decoration: none;
     color: #000;
+}
+.boton{
+    position: relative;
+    top: 300px;
+    left: 700px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #fff;
+    border: 1px solid #000;
 }
